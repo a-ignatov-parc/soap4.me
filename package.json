@@ -1,0 +1,31 @@
+{
+	"name": "soap4.me",
+	"description": "Spa version of https://soap4.me/ written with react.js",
+	"version": "0.1.0",
+	"url": "https://github.com/anton-ignatov/soap4.me",
+	"bugs": "https://github.com/anton-ignatov/soap4.me/issues",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/anton-ignatov/soap4.me.git"
+	},
+	"scripts": {
+		"build": "grunt build",
+		"install": "bower install"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"grunt": "~0.4.0",
+		"bower": "~1.3.0",
+		"grunt-cli": "~0.1.0",
+		"underscore": "~1.6.0",
+		"grunt-contrib-watch": "~0.6.0",
+		"grunt-contrib-jshint": "~0.10.0",
+		"grunt-contrib-stylus": "~0.18.0"
+	},
+	"config": {
+		"srcDir": "src",
+		"buildDir": "build",
+		"stylesDir": "static/styles",
+		"packagesDir": "packages"
+	}
+}

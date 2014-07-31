@@ -1,0 +1,9 @@
+#OS junk files
+*.DS_Store
+._*.*
+
+#grunt.js packages
+node_modules/
+bower_components/
+build/
+packages/

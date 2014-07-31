@@ -1,0 +1,19 @@
+{
+	"name": "soap4.me",
+	"description": "Spa version of https://soap4.me/ written with react.js",
+	"main": "build/app.min.js",
+	"main-debug": "build/app.js",
+	"scripts": {
+		"install": ["npm install", "grunt build"]
+	},
+	"dependencies": {
+		"react": "~0.11.0",
+		"jquery": "~2.1.1",
+		"requirejs": "~2.1.5",
+		"underscore": "~1.6.0",
+		"jsx-requirejs-plugin": "~0.2.2"
+	},
+	"devDependencies": {
+		"almond": "~0.2.9"
+	}
+}

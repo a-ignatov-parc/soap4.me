@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset='utf-8'>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>soap4.me</title>
+
+		<link href="../build/app.css" rel="stylesheet" type="text/css" />
+
+		<script src="../packages/requirejs/require.js"></script>
+		<script>
+			require.config({
+				baseUrl: '../src',
+				paths: {
+					'jsx': '../packages/jsx-requirejs-plugin/js/jsx',
+					'text': '../packages/jsx-requirejs-plugin/js/text',
+					'react': '../packages/react/react-with-addons',
+					'JSXTransformer': '../packages/react/JSXTransformer',
+					'jquery': '../packages/jquery/dist/jquery'
+				},
+				jsx: {
+					fileExtension: '.jsx'
+				}
+			});
+
+			require(['jquery', 'jsx!app'], function($, app) {
+				app.init($('.container')[0]);
+			});
+		</script>
+	</head>
+	<body>
+		<div class="container"></div>
+	</body>
+</html>
