@@ -7,6 +7,11 @@ html {
 }
 
 .soap {
+	&-layout {
+		width: 900px;
+		margin: 0 auto;
+	}
+
 	&,
 	&-header,
 	&-footer {
@@ -46,11 +51,15 @@ html {
 	}
 
 	&-series {
-		width: 900px;
-		margin: 20px auto;
 		font-size: 0;
 
+		&,
+		&-desc {
+			margin-top: 20px;
+		}
+
 		&-card {
+			width: 100px;
 			font-size: 14px;
 			color: #000;
 			text-decoration: none;

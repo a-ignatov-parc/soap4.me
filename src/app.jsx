@@ -6,7 +6,8 @@ define([
 	'jsx!layout/main',
 	'jsx!components/404',
 	'jsx!components/series',
-], function($, Backbone, React, Router, MainLayout, NotFound, Series) {
+	'jsx!components/series/description',
+], function($, Backbone, React, Router, MainLayout, NotFound, Series, Description) {
 	return {
 		init: function(container) {
 			this.container = container;
@@ -18,11 +19,20 @@ define([
 							replace: true
 						});
 					}.bind(this),
+					'series/:id': this.description.bind(this),
 					'series': this.series.bind(this),
 					'*route': this.unknown.bind(this)
 				}
 			});
 			Backbone.history.start();
+		},
+
+		description: function(id) {
+			React.renderComponent(
+				<MainLayout page="description">
+					<Description id={id} />
+				</MainLayout>
+			, this.container);
 		},
 
 		series: function() {

@@ -6,8 +6,10 @@ define([
 	var IDLE = 'idle',
 		LOADING = 'loading';
 
+	SeriesList.fetch();
+
 	return React.createClass({
-		series: new SeriesList(),
+		series: SeriesList,
 
 		getInitialState: function() {
 			return {
@@ -28,16 +30,17 @@ define([
 						state: IDLE,
 						list: this.series.toJSON()
 					});
-				}, this)
-				.fetch();
+				}, this);
 		},
 
 		render: function() {
 			return (
-				<div className="soap-series">
-					{this.state.list.map(function(series) {
-						return <Card key={series.sid} data={series} />;
-					})}
+				<div className="soap-layout">
+					<div className="soap-series">
+						{this.state.list.map(function(series) {
+							return <Card key={series.sid} id={series.sid} />;
+						})}
+					</div>
 				</div>
 			);
 		}
