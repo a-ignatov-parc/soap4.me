@@ -21,7 +21,13 @@ define([
 					}.bind(this),
 					'series/:id': this.description.bind(this),
 					'series': this.series.bind(this),
-					'*route': this.unknown.bind(this)
+					'404': this.unknown.bind(this),
+					'*route': function() {
+						this.router.navigate('404', {
+							trigger: true,
+							replace: true
+						});
+					}.bind(this)
 				}
 			});
 			Backbone.history.start();
@@ -43,16 +49,12 @@ define([
 			, this.container);
 		},
 
-		unknown: function(page) {
+		unknown: function() {
 			React.renderComponent(
-				<MainLayout page={page}>
+				<MainLayout page="404">
 					<NotFound />
 				</MainLayout>
 			, this.container);
-
-			this.router.navigate('404', {
-				replace: true
-			});
 		}
 	};
 });
