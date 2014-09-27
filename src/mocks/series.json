@@ -1,0 +1,11 @@
+[{
+	"sid": 1,
+	"title": "Test",
+	"title_ru": "Тест",
+	"description": "Тестовый текст"
+}, {
+	"sid": 2,
+	"title": "Test #2",
+	"title_ru": "Тест №2",
+	"description": "Тестовый текст №2"
+}]

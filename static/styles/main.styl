@@ -1,9 +1,185 @@
-@import 'reset.css'
+@import variables
 @import global
+@import page
 
-.container {
-	font: normal 14px/16px $font-arial;
-	background: #ccc;
-	margin: 10px;
-	padding: 10px;
+html {
+	background: #fff;
+}
+
+.soap {
+	&,
+	&-header,
+	&-footer {
+		font: normal 14px/16px $font-arial;
+		color: #000;
+	}
+
+	&-header {
+		min-height: 24px;
+		border-bottom: 1px #ccc solid;
+		background: #eee;
+		padding: 10px;
+		position: relative;
+
+		.soap {
+			&-search {
+				float: right;
+			}
+
+			&-menu {
+				line-height: 24px;
+				overflow: hidden;
+			}
+
+			&-userbar {
+				top: 100%;
+				right: 10px;
+				position: absolute;
+			}
+		}
+	}
+
+	&-footer {
+		color: #fff;
+		background: #333;
+		padding: 10px;
+	}
+
+	&-series {
+		width: 900px;
+		margin: 20px auto;
+		font-size: 0;
+
+		&-card {
+			font-size: 14px;
+			color: #000;
+			text-decoration: none;
+			margin-left: 20px;
+			display: inline-block;
+			vertical-align: top;
+
+			&:first-child {
+				margin-left: 0;
+			}
+
+			&-img {
+				width: 100px;
+				height: 100px;
+				background: #ccc;
+			}
+
+			&-title {
+				text-align: center;
+				margin-top: 10px;
+			}
+		}
+	}
+
+	&-menu {
+		font-size: 0;
+		display: block;
+
+		&-item {
+			font-size: 14px;
+			display: block;
+
+			&--active {
+				background: #ccc;
+			}
+		}
+
+		&--inline &-item {
+			margin-left: 10px;
+			display: inline-block;
+			vertical-align: top;
+
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+	}
+
+	&-search {
+		width: 152px;
+
+		.soap-icon {
+			float: right;
+		}
+
+		&-input {
+			border: 1px solid #073247;
+			border-radius: 3px;
+			background: #fff;
+
+			&-indent {
+				padding: 0 5px;
+				overflow: hidden;
+			}
+
+			&field {
+				width: 100%;
+				font: normal 12px/22px $font-arial;
+				color: #0b4d6c;
+				border: none;
+				background: none;
+				margin: 0;
+				padding: 0;
+
+				&:focus {
+					outline: none;
+				}
+			}
+		}
+	}
+
+	&-userbar {
+		color: #fff;
+		background: #333;
+		padding: 10px;
+	}
+
+	&-link {
+		text-decoration: none;
+		cursor: pointer;
+
+		&,
+		&:active {
+			color: #57a0e3;
+
+			.soap-icon-path {
+				fill: #57a0e3;
+			}
+		}
+
+		&.hover,
+		&:hover {
+			color: #ff2323;
+
+			.soap-icon-path {
+				fill: #ff2323;
+			}
+		}
+
+		&--nowrap {
+			white-space: nowrap;
+		}
+	}
+
+	&-icon {
+		width: 10px;
+		height: 10px;
+		border: none;
+		margin: 0;
+		padding: 0;
+		background: #ccc;
+		position: relative;
+		display: inline-block;
+
+		&--cancel {
+			width: 9px;
+			height: 9px;
+			background: url('/static/img/icons/cancel.png') no-repeat;
+			margin: 7px 6px 0 0;
+		}
+	}
 }

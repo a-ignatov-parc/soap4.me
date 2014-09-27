@@ -12,8 +12,7 @@ define([
 
 	function sendRequest(apiResource, data, callback) {
 		var resource = resourceMap[apiResource],
-			url = [baseUrl],
-			request;
+			url = [baseUrl];
 
 		if (!apiResource) {
 			console.error('No resource was specified');
@@ -31,7 +30,7 @@ define([
 		}
 		url = url.concat(resource.path.split('/'));
 
-		if (url[url.length - 1] != '') {
+		if (url[url.length - 1] !== '') {
 			url.push('');
 		}
 
@@ -41,23 +40,15 @@ define([
 			headers: {
 				'x-api-token': token
 			},
-			data: data,
-			success: function(data) {
-				console.log('success', data);
-			},
-			error: function(xhr) {
-				console.log('error', xhr.statusCode);
-			}
+			data: data
 		});
 	}
 
 	return {
 		login: function() {
-			sendRequest('login', {
+			return sendRequest('login', {
 				login: '',
 				password: ''
-			}, function(response) {
-				console.log('login', response);
 			});
 		}
 	};

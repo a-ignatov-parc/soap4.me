@@ -9,8 +9,8 @@
 		"url": "https://github.com/anton-ignatov/soap4.me.git"
 	},
 	"scripts": {
-		"build": "grunt build",
-		"install": "bower install"
+		"build": "node node_modules/grunt-cli/bin/grunt build",
+		"install": "node node_modules/bower/bin/bower install"
 	},
 	"dependencies": {},
 	"devDependencies": {

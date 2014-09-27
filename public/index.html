@@ -14,21 +14,27 @@
 				paths: {
 					'jsx': '../packages/jsx-requirejs-plugin/js/jsx',
 					'text': '../packages/jsx-requirejs-plugin/js/text',
-					'react': '../packages/react/react-with-addons',
 					'JSXTransformer': '../packages/react/JSXTransformer',
-					'jquery': '../packages/jquery/dist/jquery'
+
+					'react': '../packages/react/react-with-addons',
+					'jquery': '../packages/jquery/dist/jquery',
+					'backbone': '../packages/backbone/backbone',
+					'underscore': '../packages/underscore/underscore'
+				},
+				shim: {
+					underscore: {
+						exports: '_'
+					}
 				},
 				jsx: {
 					fileExtension: '.jsx'
 				}
 			});
 
-			require(['jquery', 'jsx!app'], function($, app) {
-				app.init($('.container')[0]);
+			require(['jsx!app'], function(app) {
+				app.init(document.body);
 			});
 		</script>
 	</head>
-	<body>
-		<div class="container"></div>
-	</body>
+	<body></body>
 </html>

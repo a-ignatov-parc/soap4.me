@@ -1,15 +1,48 @@
 define([
 	'jquery',
+	'backbone',
 	'react',
-	'jsx!components/hello',
-	'api/soap'
-], function($, React, Hello, soapApi) {
+	'router',
+	'jsx!layout/main',
+	'jsx!components/404',
+	'jsx!components/series',
+], function($, Backbone, React, Router, MainLayout, NotFound, Series) {
 	return {
 		init: function(container) {
-			React.renderComponent(<Hello name="World" />, container);
+			this.container = container;
+			this.router = new Router({
+				routes: {
+					'': function() {
+						this.router.navigate('series', {
+							trigger: true,
+							replace: true
+						});
+					}.bind(this),
+					'series': this.series.bind(this),
+					'*route': this.unknown.bind(this)
+				}
+			});
+			Backbone.history.start();
+		},
 
-			// Попытка авторизоваться через api soap4.me
-			soapApi.login();
+		series: function() {
+			React.renderComponent(
+				<MainLayout page="series">
+					<Series />
+				</MainLayout>
+			, this.container);
+		},
+
+		unknown: function(page) {
+			React.renderComponent(
+				<MainLayout page={page}>
+					<NotFound />
+				</MainLayout>
+			, this.container);
+
+			this.router.navigate('404', {
+				replace: true
+			});
 		}
 	};
 });
