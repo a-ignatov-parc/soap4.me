@@ -4,7 +4,11 @@ define([
 	return React.createClass({
 		render: function() {
 			return (
-				<div className="soap-card">test</div>
+				<div className="soap-layout">
+					<div>
+						Season #{this.props.season}
+					</div>
+				</div>
 			);
 		}
 	});

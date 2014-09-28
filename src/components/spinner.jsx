@@ -3,9 +3,7 @@ define([
 ], function(React) {
 	return React.createClass({
 		render: function() {
-			return (
-				<div className="soap-card">test</div>
-			);
+			return <i className="soap-spinner soap-icon soap-icon--spinner"></i>;
 		}
 	});
 });

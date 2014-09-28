@@ -4,7 +4,9 @@ define([
 	return React.createClass({
 		render: function() {
 			return (
-				<div className="soap-card">test</div>
+				<div>
+					Reviews
+				</div>
 			);
 		}
 	});

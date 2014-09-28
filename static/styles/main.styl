@@ -9,13 +9,13 @@ html {
 .soap {
 	&-layout {
 		width: 900px;
-		margin: 0 auto;
+		margin: 0 auto 20px;
 	}
 
 	&,
 	&-header,
 	&-footer {
-		font: normal 14px/16px $font-arial;
+		font: normal 14px/20px $font-arial;
 		color: #000;
 	}
 
@@ -52,10 +52,17 @@ html {
 
 	&-series {
 		font-size: 0;
+		text-align: center;
 
 		&,
 		&-desc {
 			margin-top: 20px;
+		}
+
+		&-desc {
+			&-subtitle {
+				color: #ccc;
+			}
 		}
 
 		&-card {
@@ -63,24 +70,31 @@ html {
 			font-size: 14px;
 			color: #000;
 			text-decoration: none;
-			margin-left: 20px;
+			margin: 0 10px 10px;
 			display: inline-block;
 			vertical-align: top;
 
-			&:first-child {
-				margin-left: 0;
-			}
-
-			&-img {
+			&-cover {
 				width: 100px;
 				height: 100px;
-				background: #ccc;
+				border: 1px #000 solid;
+				border-radius: 10px;
+				background: #fff;
+				overflow: hidden;
 			}
 
 			&-title {
 				text-align: center;
 				margin-top: 10px;
 			}
+
+			&--season &-title {
+				font-size: 12px;
+			}
+		}
+
+		&-seasons {
+			margin-top: 20px;
 		}
 	}
 
@@ -174,6 +188,57 @@ html {
 		}
 	}
 
+	&-loader {
+		height: 100px;
+		font-size: 0;
+		text-align: center;
+
+		&:before {
+			width: 0;
+			height: 100%;
+			content: '';
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		.soap-spinner {
+			vertical-align: middle;
+		}
+	}
+
+	&-info {
+		margin-top: 20px;
+
+		&-tabs {
+			font-size: 0;
+			margin-bottom: -5px;
+		}
+
+		&-tab {
+			font-size: 14px;
+			border-radius: 5px 5px 0 0;
+			padding: 5px 10px 10px;
+			display: inline-block;
+			vertical-align: top;
+
+			&--active {
+				background: #f0f0f0;
+			}
+
+			&-trigger {
+				color: #000;
+				text-shadow: 0 1px #fff;
+				text-decoration: none;
+			}
+		}
+
+		&-content {
+			border-radius: 5px;
+			background: #f0f0f0;
+			padding: 10px;
+		}
+	}
+
 	&-icon {
 		width: 10px;
 		height: 10px;
@@ -190,5 +255,72 @@ html {
 			background: url('/static/img/icons/cancel.png') no-repeat;
 			margin: 7px 6px 0 0;
 		}
+
+		&--spinner {
+			width: 32px;
+			height: 32px;
+			background: url('/static/img/icons/spinner.gif') no-repeat;
+		}
+	}
+
+	&-title {
+		font: normal 48px/48px $font-pt-sans;
+		color: #000;
+		margin: 0;
+		padding: 0;
+	}
+
+	&-subtitle {
+		font: bold 30px/35px $font-pt-sans;
+		color: #000;
+		margin: 0;
+		padding: 0;
+	}
+
+	&-additional_title {
+		font: bold 20px/20px $font-pt-sans;
+		color: #000;
+		margin: 0;
+		padding: 0;
+
+		&--bottom_shift {
+			margin-bottom: 14px;
+		}
+
+		&--nowrap {
+			white-space: nowrap;
+		}
+	}
+
+	&-caption {
+		font: bold 14px/20px $font-arial;
+		color: #000;
+		margin: 0;
+		padding: 0;
+	}
+
+	&-desc {
+		margin: 0 0 16px;
+
+		&--sub_desc {
+			font: normal 11px/16px $font-arial;
+		}
+
+		&--top_indent {
+			margin: 16px 0 0;
+		}
+
+		&--big {
+			font: normal 18px/24px $font-arial;
+		}
+	}
+
+	&-tag {
+		color: #fff;
+		border-radius: 3px;
+		background: #ccc;
+		padding: 0 5px;
+		margin-left: 3px;
+		display: inline-block;
 	}
 }
